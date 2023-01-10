@@ -23,6 +23,46 @@ windower.register_event('load', function()
     settings = config.load(defaults)
 end)
 
+function ward()
+	windower.add_to_chat(7,'Warding')    
+
+	if settings.auto_smn then
+		windower.add_to_chat(7,'Auto Smn')    
+		local player = windower.ffxi.get_player()
+		
+		if player.main_job == 'SMN' or player.sub_job == 'SMN' then
+			windower.add_to_chat(7,'Summoner')    
+			local pet = windower.ffxi.get_mob_by_target('pet')
+
+			if settings.favor then
+				windower.add_to_chat(7,'Favor')    
+
+				if not pet then
+					windower.send_command('input /ma "'..settings.favor_avatar..'" <me>')
+				elseif pet and pet.name:lower() ~= settings.favor_avatar:lower() then
+					windower.send_command('input /pet "Release" <me>')
+				else
+					if not checkBuff(player, "Avatar's Favor") then
+						windower.send_command('input /ja "Avatar\'s Favor" <me>')
+					end
+				end
+			end
+		end
+		
+	end
+end
+
+function checkBuff(player, buff)
+	if player ~= nil and player.buffs ~= nil then
+		for index, buffid in pairs(player.buffs) do
+			if res.buffs[buffid].en:lower() == buff:lower() then
+				return true
+			end
+		end
+	end
+	return false
+end
+
 function has_value (tab, val)
     for index, value in ipairs(tab) do
         if value:lower() == val:lower() then
@@ -42,7 +82,7 @@ end
 local function stop()
 	windower.add_to_chat(7,'Stopped warding')                           
 	settings.auto_smn = false
-	config.save(auto_smn)
+	config.save(settings)
 end
 
 local function favor()
@@ -113,3 +153,5 @@ commands['settings'] = print_settings
 commands['help'] = help
 
 windower.register_event('addon command', handle_command)
+
+ward:loop(3)
