@@ -19,13 +19,13 @@ avatars = {['Carbuncle'] = {'Shining Ruby'},
 		   ['Diabolos'] = {'Noctoshield'}, 
 		   ['Fenrir'] = {'Ecliptic Growl', 'Ecliptic Howl', 'Heavenward Howl'}, 
 		   ['Siren'] = {'Katabatic Blade', 'Chinook', "Wind's Blessing"}, 
-		   ['Cait Sith'] = {}, 
-		   ['Garuda'] = {}, 
+		   ['Cait Sith'] = {'Reraise II'}, 
+		   ['Garuda'] = {'Hastega', 'Hastega II', 'Aerial Armor', 'Fleet Wind'}, 
 		   ['Ifrit'] = {'Crimson Howl', 'Inferno Howl'}, 
-		   ['Leviathan'] = {}, 
-		   ['Ramuh'] = {}, 
+		   ['Leviathan'] = {'Soothing Current'}, 
+		   ['Ramuh'] = {'Rolling Thunder', 'Lightning Armor'}, 
 		   ['Shiva'] = {'Frost Armor', 'Crystal Blessing'}, 
-		   ['Titan'] = {}}
+		   ['Titan'] = {'Earthen Ward', 'Earthen Armor'}}
 		   
 ward_buff_names = {
 	['Shining Ruby'] = 'Shining Ruby',
@@ -40,7 +40,17 @@ ward_buff_names = {
 	['Heavenward Howl'] = 'Endrain',
 	['Katabatic Blade'] = 'Enaero',
 	['Chinook'] = 'Aquaveil',
-	["Wind's Blessing"] = "Wind's Blessing"
+	["Wind's Blessing"] = "Wind's Blessing",
+	["Reraise II"] = "Reraise",
+	["Hastega"] = "Haste",
+	["Hastega II"] = "Haste",
+	["Fleet Wind"] = "Quickening",
+	["Aerial Armor"] = "Blink",
+	["Soothing Current"] = "Curing Conduit",
+	["Rolling Thunder"] = "Enthunder",
+	["Lightning Armor"] = "Shock Spikes",
+	["Earthen Ward"] = "Stoneskin",
+	["Earthen Armor"] = "Earthen Armor"
 }
 
 local commands = {}
