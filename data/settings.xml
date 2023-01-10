@@ -4,11 +4,11 @@
         <auto_smn>false</auto_smn>
         <favor>true</favor>
         <favor_avatar>Carbuncle</favor_avatar>
-        <wards>
-
-        </wards>
+        <wards />
     </global>
     <zerodragoon>
         <auto_smn>true</auto_smn>
+        <favor_avatar>shiva</favor_avatar>
+        <wards>Crimson Howl</wards>
     </zerodragoon>
 </settings>
