@@ -16,21 +16,31 @@ defaults.wards = L{}
 settings = config.load(defaults)
 
 avatars = {['Carbuncle'] = {'Shining Ruby'},
-		   ['Diabolos'] = {}, 
-		   ['Fenrir'] = {}, 
-		   ['Siren'] = {}, 
+		   ['Diabolos'] = {'Noctoshield'}, 
+		   ['Fenrir'] = {'Ecliptic Growl', 'Ecliptic Howl', 'Heavenward Howl'}, 
+		   ['Siren'] = {'Katabatic Blade', 'Chinook', "Wind's Blessing"}, 
 		   ['Cait Sith'] = {}, 
 		   ['Garuda'] = {}, 
 		   ['Ifrit'] = {'Crimson Howl', 'Inferno Howl'}, 
 		   ['Leviathan'] = {}, 
 		   ['Ramuh'] = {}, 
-		   ['Shiva'] = {}, 
+		   ['Shiva'] = {'Frost Armor', 'Crystal Blessing'}, 
 		   ['Titan'] = {}}
 		   
 ward_buff_names = {
 	['Shining Ruby'] = 'Shining Ruby',
 	['Crimson Howl'] = 'Warcry',
-	['Inferno Howl'] = 'Enfire'
+	['Inferno Howl'] = 'Enfire',
+	['Frost Armor'] = 'Ice Spikes',
+	['Crystal Blessing'] = 'TP Bonus',
+	['Noctoshield'] = 'Phalanx',
+	['Dreamshroud'] = 'Magic Def. Boost',
+	['Ecliptic Growl'] = 'STR Boost',
+	['Ecliptic Howl'] = 'Evasion Boost',
+	['Heavenward Howl'] = 'Endrain',
+	['Katabatic Blade'] = 'Enaero',
+	['Chinook'] = 'Aquaveil',
+	["Wind's Blessing"] = "Wind's Blessing"
 }
 
 local commands = {}
@@ -66,7 +76,7 @@ function ward()
 						
 						if available_ja:contains(172) and abil_recasts[174] == 0 then
 							if available_ja:contains(385) and abil_recasts[108] == 0 then
-								windower.send_command('input /ja "Apogee" <me>;wait 4;input /ja "'..value..'" <me>')
+								windower.send_command('wait 1.5;input /ja "Apogee" <me>;wait 5;input /ja "'..value..'" <me>')
 							else 
 								windower.send_command('input /ja "'..value..'" <me>')
 							end
@@ -281,4 +291,4 @@ commands['clearwards'] = clear_wards
 
 windower.register_event('addon command', handle_command)
 
-ward:loop(3)
+ward:loop(5)
